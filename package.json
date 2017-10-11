@@ -16,7 +16,8 @@
     "url": "https://github.com/IamSoma/bamazon/issues"
   },
   "homepage": "https://github.com/IamSoma/bamazon#readme",
-   "dependencies": {
-    "mysql": "^2.5.4"
-   }
- }
+  "dependencies": {
+    "express": "^4.16.2",
+    "mysql": "^2.15.0"
+  }
+}

@@ -1,4 +1,7 @@
 var mysql      = require('mysql');
+var express = require('express');
+var app = express();
+
 var connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
@@ -6,11 +9,11 @@ var connection = mysql.createConnection({
   database : 'bamazon'
 });
 
-connection.connect();
-
-connection.query('SELECT * from < table name >', function(err, rows, fields) {
-  if (!err)
-    console.log('The solution is: ', rows);
-  else
-    console.log('Error while performing Query.');
+connection.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+  connection.query("CREATE DATABASE bamazon", function (err, result) {
+    if (err) throw err;
+    console.log("Database created");
+  });
 });
